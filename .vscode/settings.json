@@ -1,0 +1,21 @@
+{
+    // editor general
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    // cosmetics
+    "workbench.iconTheme": "material-icon-theme",
+
+    // python
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.autoImportCompletions": true,
+    // "python.analysis.importFormat": "relative",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.formatting.provider": "autopep8",   
+    "python.linting.mypyEnabled": true,
+    "python.linting.lintOnSave": true,
+    "vsintellicode.python.completionsEnabled": true,
+    "intellicodeApiExamples.python.enabled": true,
+}

@@ -2,9 +2,11 @@
     "recommendations": [
         "ms-python.vscode-pylance",
         "ms-python.python",
-        "ms-toolsai.jupyter",
         "oderwat.indent-rainbow",
         "pkief.material-icon-theme",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "charliermarsh.ruff",
+        "ninoseki.vscode-pylens",
+        "donjayamanne.python-environment-manager"
     ]
 }

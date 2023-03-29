@@ -22,7 +22,7 @@ An example data science project
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
     │   └── figures        <- Generated graphics and figures to be used in reporting
     │
-    ├── pipfile            <- The requirements file for reproducing the analysis environment
+    ├── pyproject.toml     <- The requirements file for reproducing the analysis environment
     │                         see https://pipenv.pypa.io/en/latest/
     │
     ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported

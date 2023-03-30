@@ -7,21 +7,21 @@ authors = []
 
 [tool.poetry.dependencies]
 python = "^3.9"
-matplotlib = "^3.7.1"
-pandas = "^1.5.3"
-numpy = "^1.24.2"
+matplotlib = "^3.7.1" # https://matplotlib.org/stable/users/installing.html
+pandas = "^1.5.3"     # https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html
+numpy = "^1.24.2"     # https://numpy.org/install/
+pydantic = "^1.10.7"  # https://pydantic-docs.helpmanual.io/install/
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.5"
-pytest-cov = "^3.0.0"
-ipykernel = "^6.5.0"
-debugpy = "^1.5.1"
+pytest = "^6.2.5"     # https://docs.pytest.org/en/stable/getting-started.html
+pytest-cov = "^3.0.0" # https://pytest-cov.readthedocs.io/en/latest/readme.html
+ipykernel = "^6.5.0"  # https://ipython.readthedocs.io/en/stable/install/kernel_install.html
 
 [tool.ruff]
 line-length = 120
 target-version = "py311"
 select = ["E", "F", "I", "UP", "RUF", "PL", "NPY", "N"]
-show-source = true
+show-source = true                                      # show source code for each error
 
 [tool.black]
 line-length = 120
@@ -29,22 +29,21 @@ target-version = ["py311"]
 
 [tool.mypy]
 # https://careers.wolt.com/en/blog/tech/professional-grade-mypy-configuration
-# "python.linting.mypyEnabled": true,
-# "python.linting.enabled": true,
-python_version = 3.9
-strict = true
-disallow_untyped_defs = false
-disallow_any_unimported = false
-no_implicit_optional = true
-check_untyped_defs = true
-warn_return_any = true
-warn_unused_ignores = true
-show_error_codes = true
+strict = true                   # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict
+disallow_untyped_defs = false   # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-untyped-defs
+disallow_any_unimported = false # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-any-unimported
+no_implicit_optional = true     # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-no-implicit-optional
+check_untyped_defs = true       # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs
+warn_return_any = true          # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-return-any
+warn_unused_ignores = true      # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-unused-ignores
+show_error_codes = true         # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-show-error-codes
+plugins = "pydantic.mypy"
 
 [tool.pylint.messages_control]
 disable = "C0114,C0115,C0116"
 
 [tool.pyright]
+# disable pylance warnings
 reportGeneralTypeIssues = false
 reportUnusedExpression = false
 reportMissingImports = false

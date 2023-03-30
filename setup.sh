@@ -37,24 +37,3 @@ if [[ "$VIRTUAL_ENV" != "" ]]; then
     ruff
 fi
 
-# if I dont have a virtual environment make one and install dependencies based on OS (Linux or Windows)
-if [[ "$VIRTUAL_ENV" == "" ]]; then
-    if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        python3 -m venv .venv
-        source .venv/bin/activate
-        python -m pip install --upgrade pip
-        pip install black mypy ruff poetry debugpy
-        poetry lock
-        poetry install
-        ruff
-    elif [[ "$OSTYPE" == "msys" ]]; then
-        python3 -m venv .venv
-        source .venv/Scripts/activate
-        python -m pip install --upgrade pip
-        pip install black mypy ruff poetry debugpy
-        poetry lock
-        poetry install
-        ruff
-    fi
-fi
-

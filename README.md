@@ -2,7 +2,7 @@
 
 ## Overview
 
-An example data science project
+An opinionated Python data focused project template
 
 ## Project Organization
 
@@ -44,8 +44,35 @@ An example data science project
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
     │       └── visualize.py
     │
-    └── pipfile            <- The requirements file for reproducing the analysis environment
-                              see https://pipenv.pypa.io/en/latest/
+    └── setup.sh           <- Generate a virtual environment and install dependencies
+
+## Developer Tools
+
+### [Mypy](https://mypy.readthedocs.io/en/stable/) - a static type checker for Python
+
+Type checkers help ensure that you’re using variables and functions in your code correctly. With mypy, add type hints (PEP 484) to your Python programs, and mypy will warn you when you use those types incorrectly.
+
+Python is a dynamic language, so usually you’ll only see errors in your code when you attempt to run it. Mypy is a static checker, so it finds bugs in your programs without even running them!
+
+### [Pydantic](https://docs.pydantic.dev/) - Data validation and settings management using Python type annotations
+
+Pydantic enforces type hints at runtime, and provides user friendly errors when data is invalid. Define how data should be in pure, canonical Python; validate it with pydantic.
+
+### [Black](https://pypi.org/project/black/) - The Uncompromising Code Formatter
+
+By using Black, you agree to cede control over minutiae of hand-formatting. In return, Black gives you speed, determinism, and freedom from pycodestyle nagging about formatting. You will save time and mental energy for more important matters.
+
+Blackened code looks the same regardless of the project you're reading. Formatting becomes transparent after a while and you can focus on the content instead.
+
+### [Ruff](https://beta.ruff.rs/docs/) - An extremely fast Python linter, written in Rust
+
+Ruff aims to be orders of magnitude faster than alternative tools while integrating more functionality behind a single, common interface.
+
+Ruff can be used to replace Flake8 (plus dozens of plugins), isort, pydocstyle, yesqa, eradicate, pyupgrade, and autoflake, all while executing tens or hundreds of times faster than any individual tool.
+
+### [Poetry](https://python-poetry.org/) - Python Packaging and Dependency Management made easy
+
+Poetry allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Poetry offers a lockfile to ensure repeatable installs, and can build your project for distribution.
 
 ---
 

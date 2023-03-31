@@ -7,15 +7,17 @@ authors = []
 
 [tool.poetry.dependencies]
 python = "^3.9"
-matplotlib = "^3.7.1" # https://matplotlib.org/stable/users/installing.html
-pandas = "^1.5.3"     # https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html
-numpy = "^1.24.2"     # https://numpy.org/install/
-pydantic = "^1.10.7"  # https://pydantic-docs.helpmanual.io/install/
+numpy = "^1.24.2"   # https://numpy.org/install/
+polars = "^0.16.17" # https://pola-rs.github.io/polars-book/user-guide/quickstart/intro.html
+plotly = "^5.14.0"  # https://plotly.com/python/getting-started/
 
-[tool.poetry.dev-dependencies]
-pytest = "^6.2.5"     # https://docs.pytest.org/en/stable/getting-started.html
-pytest-cov = "^3.0.0" # https://pytest-cov.readthedocs.io/en/latest/readme.html
-ipykernel = "^6.5.0"  # https://ipython.readthedocs.io/en/stable/install/kernel_install.html
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.2"     # https://docs.pytest.org/en/stable/getting-started.html
+pytest-cov = "^4.0.0" # https://pytest-cov.readthedocs.io/en/latest/readme.html
+ipykernel = "^6.22.0" # https://ipython.readthedocs.io/en/stable/install/kernel_install.html
+black = "^23.3.0"     # https://black.readthedocs.io/en/stable/installation_and_usage.html
+mypy = "^1.1.1"       # https://mypy.readthedocs.io/en/stable/getting_started.html
+ruff = "^0.0.260"     # https://github.com/charliermarsh/ruff
 
 [tool.ruff]
 line-length = 120
@@ -25,7 +27,7 @@ show-source = true                                      # show source code for e
 
 [tool.black]
 line-length = 120
-target-version = ["py311"]
+target-version = ["py39", "py310", "py311"]
 
 [tool.mypy]
 # https://careers.wolt.com/en/blog/tech/professional-grade-mypy-configuration
@@ -43,7 +45,7 @@ plugins = "pydantic.mypy"
 disable = "C0114,C0115,C0116"
 
 [tool.pyright]
-# disable pylance warnings
+# disable pylance warnings as we are using Ruff
 reportGeneralTypeIssues = false
 reportUnusedExpression = false
 reportMissingImports = false

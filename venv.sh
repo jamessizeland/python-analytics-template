@@ -28,12 +28,12 @@ elif [[ "$OSTYPE" == "msys" ]]; then
     source .venv/Scripts/activate
 fi
 
-# if virtualenv is activated upgrade pip, install black, mypy, ruff and poetry then install dependencies
+# if virtualenv is activated upgrade pip, install poetry then install dependencies
 if [[ "$VIRTUAL_ENV" != "" ]]; then
     python -m pip install --upgrade pip
-    pip install black mypy ruff poetry debugpy
-    poetry lock
+    pip install poetry debugpy
     poetry install
-    ruff
+    poetry update
+    pip list
 fi
 

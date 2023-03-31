@@ -7,7 +7,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-poetry.lock
+/poetry.lock
 env/
 venv/
 .venv/
@@ -87,3 +87,4 @@ target/
 
 # Mypy cache
 .mypy_cache/
+

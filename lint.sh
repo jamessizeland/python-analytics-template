@@ -23,7 +23,7 @@ if [[ "$VIRTUAL_ENV" != "" ]]; then
     runtime=$((end_time-start_time))
     
     printf "${GRAY}>>>${GREEN} Types checked in ${mypy_time} ms${NC}\n"
-    printf "${GRAY}>>>${GREEN} Code `quality checked in ${ruff_time} ms${NC}\n"
+    printf "${GRAY}>>>${GREEN} Code quality checked in ${ruff_time} ms${NC}\n"
     printf "${GRAY}>>>${GREEN} Total ${runtime} ms${NC}\n"
 else
     printf "${RED}Please activate virtualenv first by running venv.sh${NC}\n"

@@ -9,8 +9,21 @@
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.autoSearchPaths": true,
     "python.analysis.useLibraryCodeForTypes": true,
-    "python.formatting.provider": "black",
+    // mypy type checking options
     "python.linting.mypyEnabled": true,
     "python.linting.enabled": true,
-    "python.linting.lintOnSave": true
+    "python.linting.lintOnSave": true,
+    // ruff linting options
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.languageServer": "None",
+    // configure VS Code to autofix violations on-save using Ruff, then re-format with Black
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            // "source.fixAll": true,
+        }
+    },
+    "python.formatting.provider": "black",
 }

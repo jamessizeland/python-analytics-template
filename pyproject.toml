@@ -22,11 +22,14 @@ mypy = "^1.1.1"            # https://mypy.readthedocs.io/en/stable/getting_start
 ruff = "^0.0.260"          # https://github.com/charliermarsh/ruff
 pydantic = "^1.10.7"       # https://pydantic-docs.helpmanual.io/
 mypy-extensions = "^1.0.0"
-maturin = "^0.14.16"
+maturin = "^0.14.0"        #
 
 [build-system]
 build-backend = "maturin"
 requires = ["maturin>=0.14.0,<0.15"]
+
+[tool.maturin]
+binging = "pyo3"
 
 [tool.ruff]
 line-length = 120

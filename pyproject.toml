@@ -12,12 +12,14 @@ polars = "^0.16.17" # https://pola-rs.github.io/polars-book/user-guide/quickstar
 plotly = "^5.14.0"  # https://plotly.com/python/getting-started/
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.2.2"     # https://docs.pytest.org/en/stable/getting-started.html
-pytest-cov = "^4.0.0" # https://pytest-cov.readthedocs.io/en/latest/readme.html
-ipykernel = "^6.22.0" # https://ipython.readthedocs.io/en/stable/install/kernel_install.html
-black = "^23.3.0"     # https://black.readthedocs.io/en/stable/installation_and_usage.html
-mypy = "^1.1.1"       # https://mypy.readthedocs.io/en/stable/getting_started.html
-ruff = "^0.0.260"     # https://github.com/charliermarsh/ruff
+pytest = "^7.2.2"          # https://docs.pytest.org/en/stable/getting-started.html
+pytest-cov = "^4.0.0"      # https://pytest-cov.readthedocs.io/en/latest/readme.html
+ipykernel = "^6.22.0"      # https://ipython.readthedocs.io/en/stable/install/kernel_install.html
+black = "^23.3.0"          # https://black.readthedocs.io/en/stable/installation_and_usage.html
+mypy = "^1.1.1"            # https://mypy.readthedocs.io/en/stable/getting_started.html
+ruff = "^0.0.260"          # https://github.com/charliermarsh/ruff
+pydantic = "^1.10.7"       # https://pydantic-docs.helpmanual.io/
+mypy-extensions = "^1.0.0"
 
 [tool.ruff]
 line-length = 120
@@ -31,24 +33,25 @@ target-version = ["py39", "py310", "py311"]
 
 [tool.mypy]
 # https://careers.wolt.com/en/blog/tech/professional-grade-mypy-configuration
-strict = true                   # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict
-disallow_untyped_defs = false   # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-untyped-defs
-disallow_any_unimported = false # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-any-unimported
-no_implicit_optional = true     # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-no-implicit-optional
-check_untyped_defs = true       # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs
-warn_return_any = true          # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-return-any
-warn_unused_ignores = true      # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-unused-ignores
-show_error_codes = true         # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-show-error-codes
+strict = true                  # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict
+disallow_untyped_defs = true   # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-untyped-defs
+disallow_any_unimported = true # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-any-unimported
+no_implicit_optional = true    # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-no-implicit-optional
+check_untyped_defs = true      # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs
+warn_return_any = true         # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-return-any
+warn_unused_ignores = true     # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-unused-ignores
+show_error_codes = true        # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-show-error-codes
 plugins = "pydantic.mypy"
 
-[tool.pylint.messages_control]
-disable = "C0114,C0115,C0116"
+# [tool.pylint.messages_control]
+# disable = "C0114,C0115,C0116"
 
-[tool.pyright]
-# disable pylance warnings as we are using Ruff
-reportGeneralTypeIssues = false
-reportUnusedExpression = false
-reportMissingImports = false
-reportMissingModuleSource = false
-reportUnboundVariable = false
-reportUndefinedVariable = false
+# [tool.pyright]
+# # disable pylance warnings as we are using Ruff
+# reportMissingTypeStubs = false
+# reportGeneralTypeIssues = false
+# reportUnusedExpression = false
+# reportMissingImports = false
+# reportMissingModuleSource = false
+# reportUnboundVariable = false
+# reportUndefinedVariable = false

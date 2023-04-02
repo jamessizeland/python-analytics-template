@@ -42,7 +42,7 @@ An opinionated Python data focused project template
 │   │   └── .py
 │   └── lib.rs         <- Rust code that can be compiled and called from Python with pyo3
 │                         and maturin, by running the command 'maturin develop'
-│
+├── lint.sh            <- Run mypy and ruff on the python code
 └── venv.sh            <- Generate a virtual environment and install dependencies
 ```
 
@@ -77,7 +77,6 @@ Poetry allows you to declare the libraries your project depends on and it will m
 ### [Rust](https://www.rust-lang.org/) - Blazingly fast code modules
 
 Use [pyo3](https://pyo3.rs/v0.18.2/) to compile custom Rust code with native Python bindings.  Update exported functions from src/lib.rs by running `maturin develop`.
-
 
 ---
 

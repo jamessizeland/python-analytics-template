@@ -4,6 +4,8 @@ version = "3.11"
 readme = "README.md"
 description = ""
 authors = []
+# repository = "placeholder"
+
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -20,6 +22,14 @@ mypy = "^1.1.1"            # https://mypy.readthedocs.io/en/stable/getting_start
 ruff = "^0.0.260"          # https://github.com/charliermarsh/ruff
 pydantic = "^1.10.7"       # https://pydantic-docs.helpmanual.io/
 mypy-extensions = "^1.0.0"
+maturin = "^0.14.0"        #
+
+[build-system]
+build-backend = "maturin"
+requires = ["maturin>=0.14.0,<0.15"]
+
+[tool.maturin]
+binging = "pyo3"
 
 [tool.ruff]
 line-length = 120
@@ -33,15 +43,16 @@ target-version = ["py39", "py310", "py311"]
 
 [tool.mypy]
 # https://careers.wolt.com/en/blog/tech/professional-grade-mypy-configuration
-strict = true                  # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict
-disallow_untyped_defs = true   # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-untyped-defs
-disallow_any_unimported = true # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-any-unimported
-no_implicit_optional = true    # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-no-implicit-optional
-check_untyped_defs = true      # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs
-warn_return_any = true         # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-return-any
-warn_unused_ignores = true     # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-unused-ignores
-show_error_codes = true        # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-show-error-codes
-plugins = "pydantic.mypy"
+strict = true                                           # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict
+namespace_packages = true                               # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-namespace-packages
+disallow_untyped_defs = true                            # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-untyped-defs
+disallow_any_unimported = true                          # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-disallow-any-unimported
+no_implicit_optional = true                             # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-no-implicit-optional
+check_untyped_defs = true                               # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-check-untyped-defs
+warn_return_any = true                                  # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-return-any
+warn_unused_ignores = true                              # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-warn-unused-ignores
+show_error_codes = true                                 # https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-show-error-codes
+plugins = ["pydantic.mypy", "numpy.typing.mypy_plugin"]
 
 # [tool.pylint.messages_control]
 # disable = "C0114,C0115,C0116"

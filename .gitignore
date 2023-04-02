@@ -8,6 +8,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 /poetry.lock
+/Cargo.lock
 env/
 venv/
 .venv/

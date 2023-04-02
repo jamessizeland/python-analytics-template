@@ -29,7 +29,9 @@ An opinionated Python data focused project template
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures        <- Generated graphics and figures to be used in reporting
 │
-├── pyproject.toml     <- The requirements and development experience configuration file
+├── pyproject.toml     <- The Python requirements and development experience configuration file
+│
+├── Cargo.toml         <- The Rust configuration file
 │
 ├── src                <- Source code for use in this project.
 │   ├── __init__.py    <- Makes src a Python module
@@ -38,8 +40,10 @@ An opinionated Python data focused project template
 │   │   └── .py
 │   ├── tests          <- Pytest scripts for this project
 │   │   └── .py
+│   └── lib.rs         <- Rust code that can be compiled and called from Python with pyo3
+│                         and maturin, by running the command 'maturin develop'
 │
-└── venv.sh           <- Generate a virtual environment and install dependencies
+└── venv.sh            <- Generate a virtual environment and install dependencies
 ```
 
 ## Developer Tools
@@ -69,6 +73,11 @@ Ruff can be used to replace Flake8 (plus dozens of plugins), isort, pydocstyle, 
 ### [Poetry](https://python-poetry.org/) - Python Packaging and Dependency Management made easy
 
 Poetry allows you to declare the libraries your project depends on and it will manage (install/update) them for you. Poetry offers a lockfile to ensure repeatable installs, and can build your project for distribution.
+
+### [Rust](https://www.rust-lang.org/) - Blazingly fast code modules
+
+Use [pyo3](https://pyo3.rs/v0.18.2/) to compile custom Rust code with native Python bindings.  Update exported functions from src/lib.rs by running `maturin develop`.
+
 
 ---
 
